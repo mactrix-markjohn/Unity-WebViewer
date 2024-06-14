@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BrowserLauncher : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class BrowserLauncher : MonoBehaviour
 	public string pageTitle = "Robinson Helicopter Community";
 	public int paddingTop = 0;
 	public int paddinBottom = 0;
-	public int paddingLeft = 20;
+	public int paddingLeft = 10;
 	public int paddingRight = 0;
 
 	// check readme file to find out how to change title, colors etc.
@@ -32,5 +33,10 @@ public class BrowserLauncher : MonoBehaviour
 	public void OnClearCacheClicked()
 	{
 		InAppBrowser.ClearCache();
+	}
+
+	public void OpenScene(string sceneName)
+	{
+		SceneManager.LoadScene(sceneName);
 	}
 }
